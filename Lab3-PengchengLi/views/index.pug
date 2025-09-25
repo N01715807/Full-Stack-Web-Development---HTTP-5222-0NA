@@ -1,0 +1,11 @@
+doctype html
+html
+  head
+    title= title
+  body
+    h1= title
+
+    ul
+    each link in menu
+      li
+        a(href=link.path)= link.name

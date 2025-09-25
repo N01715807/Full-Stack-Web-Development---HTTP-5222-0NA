@@ -1,0 +1,30 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    title= title
+  body
+    h1= title
+
+    p
+      a(href="/admin/menu/add") + Add New Link
+
+    if menu && menu.length
+      table(border="1" cellpadding="6")
+        thead
+          tr
+            th Link
+            th Actions
+        tbody
+          each link in menu
+            tr
+              td #{link.name} (#{link.path})
+              td
+                a(href=`/admin/menu/edit?linkId=${link._id}`) Edit
+                |   |  
+                a(href=`/admin/menu/delete?linkId=${link._id}` onclick="return confirm('Delete this link?')") Delete
+    else
+      p No links yet.
+
+    p
+      a(href="/") ← Back to Home

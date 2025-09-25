@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    title= title
+  body
+    h1= title
+
+    form(action="/admin/menu/add/submit" method="post")
+      div
+        label(for="name") Link text
+        input#name(type="text" name="name" required placeholder="About")
+
+      div
+        label(for="path") Path
+        input#path(type="text" name="path" required placeholder="/about")
+
+      div
+        label(for="weight") Weight (order)
+        input#weight(type="number" name="weight" min="0" value="0")
+
+      button(type="submit") Add Link
+
+    p
+      a(href="/admin/menu") ← Back to list
