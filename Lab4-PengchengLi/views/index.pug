@@ -1,0 +1,22 @@
+//- views/index.pug
+extends common/layout
+
+block content
+  h1 Movies (MongoDB + Mongoose)
+
+  p
+    a.btn(href='/update-demo') Run update-demo (updateOne)
+    a.btn(href='/delete-demo') Run delete-demo (deleteMany)
+
+  if movies && movies.length
+    ul
+      each m in movies
+        li
+          h2= m.title
+          div Year: #{m.year}
+          div Rating: #{m.rating}
+  else
+    p No movies yet.
+
+  p
+    small insertMany() runs once when collection is empty.
