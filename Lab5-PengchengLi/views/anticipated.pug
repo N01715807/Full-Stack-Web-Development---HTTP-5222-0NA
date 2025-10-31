@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    title Most Anticipated Shows
+  body
+    h1 Most Anticipated Shows
+
+    if error
+      p= error
+
+    if items && items.length
+      ul
+        each item in items
+          li
+            a(href=`/show/${item.slug}`)= item.title
+            |  (
+            = item.year || 'N/A'
+            | )
+    else
+      p No data.
+
+    p
+      a(href="/") Back to Home
