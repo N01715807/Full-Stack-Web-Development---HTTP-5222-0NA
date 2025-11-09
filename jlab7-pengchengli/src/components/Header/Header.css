@@ -1,0 +1,23 @@
+.site-header {
+  background: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+.site-name {
+  font-weight: bold;
+}
+
+.site-nav a {
+  margin: 0 1rem;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease; 
+}
+
+.site-nav a:hover {
+  color: red; 
+}
